@@ -1,0 +1,23 @@
+.Menu {
+  height: 100%;
+}
+
+.Menu ul {
+  padding: 0;
+}
+
+.Menu ul li{
+  list-style-type: none;
+  width: 35px;
+  height: 5px;
+  margin: 5px 0;
+  padding: 0;
+  border-radius: 3px;
+  background-color: white;
+}
+
+@media (min-width: 500px) {
+  .Menu {
+    display: none;
+  }
+}
