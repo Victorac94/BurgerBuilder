@@ -20,7 +20,10 @@ class Orders extends Component {
       orders = this.props.orders.map(order => (<Order
           key={order.id}
           ingredients={order.ingredients}
-          price={+order.price} />))
+          price={+order.price} />));
+      if (orders.length == 0) {
+        orders = <h2 style={{textAlign: 'center', color: '#424242'}}>No orders found.</h2>;
+      }
     }
     return (
       <div>

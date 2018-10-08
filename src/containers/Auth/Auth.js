@@ -43,7 +43,7 @@ class Auth extends Component {
         touched: false
       }
     },
-    isSignup: true
+    isSignup: false
   }
 
   componentDidMount () {
@@ -51,8 +51,6 @@ class Auth extends Component {
       this.props.onSetAuthRedirectPath();
     }
   }
-
-
 
   inputChangedHandler = (event, controlName) => {
     const updatedControls = updateObject(this.state.controls, {
@@ -129,13 +127,16 @@ class Auth extends Component {
       <div className={classes.Auth}>
         {authRedirect}
         {errorMessage}
+        <h3>{this.state.isSignup ? "Sign up" : "Log in"}</h3>
         <form onSubmit={this.submitHandler}>
           {form}
           <Button btnType="Success" >Submit</Button>
         </form>
         <Button
           clicked={this.switchAuthModeHandler}
-          btnType="Danger">Switch to {this.state.isSignup ? "SIGN IN" : "SIGN UP"}</Button>
+          btnType="Danger">
+          {this.state.isSignup ? "Already have an account? Click here" : "Don't have an account? Click here"}
+        </Button>
       </div>
     )
   }

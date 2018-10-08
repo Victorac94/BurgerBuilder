@@ -29,10 +29,11 @@ export function* authUserSaga(action) {
     password: action.password,
     returnSecureToken: true
   };
-  let url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBq8mkxB3DfoBFbSpTdSnVQdyWHAhxTYfo";
-
-  if (!action.isSignup) {
-    url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBq8mkxB3DfoBFbSpTdSnVQdyWHAhxTYfo";
+  //Crear un nuevo usuario
+  let url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBq8mkxB3DfoBFbSpTdSnVQdyWHAhxTYfo";
+  //Logear al usuario existente
+  if (action.isSignup) {
+    url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBq8mkxB3DfoBFbSpTdSnVQdyWHAhxTYfo";
   }
   try {
     const response = yield axios.post(url, authData)

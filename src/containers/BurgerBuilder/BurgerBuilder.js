@@ -66,6 +66,7 @@ export class BurgerBuilder extends Component {
     if (this.props.ings) {
       burger = (
       <Aux>
+        <h1 style={{textAlign: 'center', color: '#CB6914'}}>Welcome to BURGER BUILDER!</h1>
         <Burger ingredients={this.props.ings} />
         <BuildControls
           ingredientAdded={this.props.onIngredientAdded}
