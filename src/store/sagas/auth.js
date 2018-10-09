@@ -1,5 +1,5 @@
 import { delay } from 'redux-saga'; // retrasa la ejecución del siguiente paso
-import { put, call } from 'redux-saga/effects'; // 'put' despacha una nueva acción
+import { put } from 'redux-saga/effects'; // 'put' despacha una nueva acción
 import axios from 'axios';
 
 import * as actions from '../actions/index';

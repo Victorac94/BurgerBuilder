@@ -21,7 +21,7 @@ class Orders extends Component {
           key={order.id}
           ingredients={order.ingredients}
           price={+order.price} />));
-      if (orders.length == 0) {
+      if (orders.length === 0) {
         orders = <h2 style={{textAlign: 'center', color: '#424242'}}>No orders found.</h2>;
       }
     }
